@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let fout = false
+let voornaam = prompt ('geef je voornam');
+
+
+
+
+function control (gevennames){
+    if (gevennames == null) {
+    document.write("u heeft geannuleerd!");
+        fout = true;
+    }
+    else if (gevennames.length == 0) {
+        document.write("u heeft niets ingevuld");
+        fout = true;
+    }
+
+    else if(gevennames.length < 2 ){
+        document.write ('Geef meer dan 2 karakters');
+        fout = true;
+    }
+    else  {
+        return gevennames.charAt(0).toUpperCase() + gevennames.substr(1);
+    }
+    
+}
+voornaam = control(voornaam);
+
+
+if (fout == false ) {
+    achternaam = prompt ('geef he achternaam');
+    achternaam = control(achternaam);
+    document.write(`hey ${voornaam} ${achternaam}`);
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form><p><label>Naam: </label><input type="text" name="naam" id="naam"></p>
+        <p><label>email: </label><input type="text" name="email" id="email"></p>
+        <p>
+            <label>Wat wil je mij zeggen?</label><br>
+            <textarea id="mijnTekst">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea>
+        </p>
+        <button onclick="sendMail();">Send</button></form>
+  
+        <script type="text/javascript">function sendMail() {
+            let link = "mailto:" + encodeURIComponent("info@cvo.be;")
+            + encodeURIComponent(document.getElementById('email').value)
+            + "?cc=" + encodeURIComponent("kopie@cvo.be")
+              + "&subject=" + encodeURIComponent("Formulier validatie")
+              + "&body="
+              + "naam:"
+              + encodeURIComponent(document.getElementById('naam').value)
+              + encodeURIComponent("\r\n\n")
+              + "bericht:"
+              + encodeURIComponent(document.getElementById('mijnTekst').value);
+              window.location.href = link;
+          //zorgt voor versturing naar mail programma
+              }
+              if(allesCorrectIngevuld){
+				document.write("Alles is correct ingevuld");
+				let link = "mailto:" + encodeURIComponent("info@cvo.be")
+				+ "?cc=" + encodeURIComponent("kopie@cvo.be")
+				+ "&subject=" + encodeURIComponent("Formulier validatie")
+				+ "&body=" 
+				+ "voornaam:" 
+				+ encodeURIComponent(voornaamTxt) 
+				+ encodeURIComponent("\r\n\n")
+				+ "achternaam:" 
+				+ encodeURIComponent(achternaamTxt) 
+				+ encodeURIComponent("\r\n\n") 
+				+ "postcode:"
+				+ encodeURIComponent(postcodeTxt)
+				+ encodeURIComponent("\r\n\n")
+				+ "straat:"
+				+ encodeURIComponent(straatTxt)
+				+ "straatnummer:"
++ encodeURIComponent(straatnummerTxt)  
+				+ encodeURIComponent("\r\n\n")
+				+ "email:"
+				+ encodeURIComponent(emailTxt)
+				+ encodeURIComponent("\r\n\n")
+
+          </script>
+</body>
+</html>
